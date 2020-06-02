@@ -1,0 +1,30 @@
+La consulta pudo ser unificada con base al Hecho 6 de la base de conocimiento.
+
+progenitor(patricia,jaime).
+
+la respuesta es false ya que no existe en la base de conocimiento un hecho para
+el cual jaime sea progenitor de alguien. Esto se puede verificar en el árbol genealógico.
+
+progenitor(jaime,X).
+
+Esta consulta arroja todos los progenitores de jaime. Según el árbol genealógico de la 
+figura y los hechos definidos para el árbol, la única progenitora de jaime es patricia.
+
+progenitor(X,jaime).
+
+Arroja la información de los bisnietos de tomas, con su respectivos padres y abuelos. 
+En este caso sólo tenemos una opción para X,Y,Z ya que sólo existe un bisnieto para 
+tomas que es jaime.
+
+progenitor(tomas,X), progenitor(X,Y),progenitor(Y,Z).
+
+
+esta consulta arroja la informacion de los bisnietos de clara ,Si clara no fuera bisabuela
+de jaime, la consulta arrojaría false, pero en este caso prolog unifica la consulta y nos muestra el resultado.
+la unificacion que realiza prolog lo toma como esta consulta ?-progenitor(tomas,jose), ?-progenitor(jose,patricia). y ?-progenitor(patricia,jaime). y nos muestra los resultados.
+
+progenitor(clara,X), progenitor(X,Y),progenitor(Y,jaime).
+
+
+
+
